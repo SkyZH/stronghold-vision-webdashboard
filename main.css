@@ -1,0 +1,9 @@
+.st-camera {
+  width: 100%;
+  height: auto;
+}
+
+.st-card-status .list-group-item {
+  border-bottom-width: 0 !important;
+  border-top-width: 0 !important;
+}

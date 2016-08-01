@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Camera View</title>
+    <link href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/main.css" charset="utf-8">
+  </head>
+  <body>
+    <nav class="navbar navbar-light">
+      <a class="navbar-brand" href="#">Vision Dashboard for Team 9036</a>
+    </nav>
+    <div class="conatiner-fluid m-t-2 m-x-1">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card st-card-status">
+            <div class="card-header">
+              Camera
+            </div>
+            <img class="st-camera" src="/stream.mjpg">
+            <div class="card-footer bg-success">
+              Connected
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card st-card-status">
+            <div class="card-header">
+              Vision Tracer
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item bg-success"><span class="label label-default">Status</span> Enabled</li>
+              <li class="list-group-item bg-success"><span class="label label-default">Auto Exposure</span> Disabled</li>
+              <li class="list-group-item bg-success"><span class="label label-default">Target</span> 1 discovered</li>
+              <li class="list-group-item bg-success"><span class="label label-default">Angle</span> 20°</li>
+              <li class="list-group-item bg-success"><span class="label label-default">Distance</span> 10m</li>
+              <li class="list-group-item bg-info"><span class="label label-default">Robot Drive</span> Ready</li>
+              <li class="list-group-item bg-success"><span class="label label-default">Shooter</span> Moving</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    <script src="//cdn.bootcss.com/bootstrap/4.0.0-alpha.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
