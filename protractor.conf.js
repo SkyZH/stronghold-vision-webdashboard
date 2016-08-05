@@ -55,6 +55,6 @@ exports.config = {
         console.log('SauceOnDemandSessionID=' + session.getId() + ' job-name=' + jobName);
       });
     };
-    printSessionId("wind-ng");
+    printSessionId("webdashboard");
   }
 };
