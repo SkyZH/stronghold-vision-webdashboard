@@ -1,0 +1,39 @@
+<div class="conatiner-fluid m-t-2 m-x-1">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card st-card-status">
+        <div class="card-header">
+          摄像头
+        </div>
+        <img class="st-camera" src="/stream.mjpg">
+        <div class="card-block">
+          <div class="btn-group">
+            <button type="button" class="btn btn-outline-primary">切换到前部</button>
+            <button type="button" class="btn btn-outline-primary">切换到后部</button>
+          </div>
+        </div>
+        <div class="card-footer bg-success">
+          已连接 - 前部
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card st-card-status">
+        <div class="card-header">
+          视觉处理中心
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"
+              [ngClass]="{'bg-success': status.status == 0, 'bg-warning': status.status == 2, 'bg-info': status.status == 1}"
+              *ngFor="let status of statuses">
+            <i class="fa fa-check fa-fw" *ngIf="status.status == 0"></i>
+            <i class="fa fa-circle-o-notch fa-spin fa-fw" *ngIf="status.status == 1"></i>
+            <i class="fa fa-exclamation fa-fw" *ngIf="status.status == 2"></i>
+            <span>{{ status.title }}</span>
+            <strong>{{ status.info }}</strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
