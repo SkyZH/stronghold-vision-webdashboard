@@ -15,3 +15,11 @@ addons:
 notifications:
   slack:
     secure: SB45mBvwfpkABpq1IxGdZ+eGdKcABGpQksOT2HoOImi6hMyj14+iNadFHM3kzMXf+wCTzKTtDM8tW2IT5Z56C48Ofv0yFa/j6+KXObC1Us5kbCcocpR1Emj9uxGCH6Bxf74bNGftcA2AMxD84LbkBqzUy53rXhW4hpwyO8BZ5yXKXAixHvFlK9kabK1Nid301XI0CRYzaYsgmcw6yG4MCdGPT5+/XLH6dPz+Cbei4ExOfU59dzJnMWyazYAHzbksYocdJuY7oOOBy3T2QwoyUjfXcIqHchFY6RiMhBdQKVh7hOpb3id7yH/efPFd0gzsiEB3MrzCgx6CU99wis6uyWjjRKZ+9Q3p9mygI1a6wdSifW5P+SvcPrtNGYtTUdpZ8tNdhNAXoRDI2FT1dkaLpGR7+xdK0xBEXYWkDuCqItkLXy+/zbdpWahNBcbiz3WNmMgc/q+jiMcSN/QILX64aoH97VtNrVzplnYbrQ+iKcwmYMd7xy6u9gr+U4uIZ2ippEmBWBJfZn8+AHQgOUZmvPgAoM9Y8Js5NjHVuOY5OcmVik1WiROwjo7gPSi+NFxeIQpJWjdFx4wdaqoUKx/6HsjWOiC0aQhtgYMhAFY+j1VAn25QHq5QdUhN5lSG9gvPuhTMTT48E6iZl+RPca6t5KZhZ5C93hd5g5YhDwQmZbc=
+env:
+  - CXX=g++-4.8
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
