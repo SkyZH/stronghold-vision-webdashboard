@@ -152,7 +152,7 @@ window.NetworkTables = function(host) {
 
 		if (immediateNotify == true) {
 			ntCache.forEach(function(k, v){
-				f({k, v, isNew: true});
+				f({k: k, v: v, isNew: true});
 			});
 		}
 	};
@@ -196,7 +196,7 @@ window.NetworkTables = function(host) {
 		if (immediateNotify == true) {
 			var v = ntCache.get(key);
 			if (v !== undefined) {
-				f({k: key, v, isNew: true});
+				f({k: key, v: v, isNew: true});
 			}
 		}
 	};
@@ -339,14 +339,14 @@ window.NetworkTables = function(host) {
 
 					// notify global listeners
 					for (var i in globalListeners) {
-						globalListeners[i]({k: key, v: value, isNew});
+						globalListeners[i]({k: key, v: value, isNew: isNew});
 					}
 
 					// notify key-specific listeners
 					var listeners = keyListeners.get(key);
 					if (listeners !== undefined) {
 						for (var i in listeners) {
-							listeners[i]({k: key, v: value, isNew});
+							listeners[i]({k: key, v: value, isNew: isNew});
 						}
 					}
 				}
