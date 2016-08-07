@@ -33,11 +33,17 @@ export class NetworkTablesService {
       f => this.ntService["addRobotConnectionListener"](f, true),
       f => this.ntService["removeRobotConnectionListener"](f)
     );
+
+    this._robotListener.subscribe(status => this._robotStatus = status);
+    this._wsListener.subscribe(status => this._wsStatus = status);
   }
 
   private _globalListener: any;
   private _wsListener: any;
   private _robotListener: any;
+
+  private _robotStatus: boolean;
+  private _wsStatus: boolean;
 
   public getValue(key, defaultValue): any {
     return this.ntService["getValue"](key, defaultValue);
@@ -57,6 +63,14 @@ export class NetworkTablesService {
 
   get robotListener(): Observable<any> {
     return this._robotListener;
+  }
+
+  get robotStatus(): boolean {
+    return this._robotStatus;
+  }
+
+  get wsStatus(): boolean {
+    return this._wsStatus;
   }
 }
 

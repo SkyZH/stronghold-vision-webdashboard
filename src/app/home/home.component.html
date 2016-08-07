@@ -19,7 +19,11 @@
     </div>
     <div class="col-md-6">
       <div class="card st-card-status">
-        <div class="card-header">
+        <div class="card-header"
+          [ngClass]="{'bg-warning': !ntService.robotStatus && ntService.wsStatus, 'bg-info': !ntService.wsStatus}">
+          <span *ngIf="!ntService.wsStatus">未连接 - </span>
+          <span *ngIf="!ntService.robotStatus && ntService.wsStatus">未连接到机器人 - </span>
+          <span *ngIf="ntService.robotStatus">已连接 - </span>
           视觉处理中心 (前部)
         </div>
         <ul class="list-group list-group-flush">
