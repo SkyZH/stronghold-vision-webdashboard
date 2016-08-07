@@ -12,3 +12,5 @@ import 'ng2-bootstrap/ng2-bootstrap';
 
 import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome-webpack';
+
+import '../vendor/networktables';
