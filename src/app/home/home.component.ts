@@ -67,10 +67,10 @@ export class HomeComponent implements OnInit, OnDestroy {
             _st.info = "未启用";
             break;
         }
-        if (_st.status == "target_count") {
+        if (i == "target_count") {
           _st.info = "发现" + this._statuses["target_count_number"] + "个目标";
         }
-        if (_st.status == "target_angle") {
+        if (i == "target_angle") {
           _st.info = "距离" + this._statuses["target_angle_number"] + "°";
         }
         this.statuses.push(_st);
