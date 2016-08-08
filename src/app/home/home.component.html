@@ -5,15 +5,11 @@
         <div class="card-header">
           摄像头
         </div>
-        <img class="st-camera" src="/stream.mjpg">
-        <div class="card-block">
-          <div class="btn-group">
-            <button type="button" class="btn btn-outline-primary">切换到前部</button>
-            <button type="button" class="btn btn-outline-primary">切换到后部</button>
-          </div>
-        </div>
-        <div class="card-footer bg-success">
-          已连接 - 前部
+        <img class="st-camera" [src]="camera_path">
+        <div class="card-footer" [ngClass]="{'bg-success': camera_status == 0, 'bg-info': camera_status == 1}">
+          已绑定 -
+          <span *ngIf="camera_status == 0">前置</span>
+          <span *ngIf="camera_status == 1">后置</span>
         </div>
       </div>
     </div>

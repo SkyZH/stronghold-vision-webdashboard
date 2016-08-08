@@ -20,7 +20,7 @@ export class NetworkTablesService {
 
   constructor(
   ) {
-    this.ntService = new (window["NetworkTables"])("ws://pi-frc-9036.local:5802/networktables/ws")
+    this.ntService = new (window["NetworkTables"])("ws://" + window.location.hostname + ":5802/networktables/ws")
     this._globalListener = Observable.fromEventPattern(
       f => this.ntService["addGlobalListener"](f, true),
       f => this.ntService["removeGlobalListener"](f)

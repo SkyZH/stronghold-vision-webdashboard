@@ -1,21 +1,25 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NETWORKTABLES_SERVICE_PROVIDER, NetworkTablesService } from '../shared/networktables';
 import { Observable } from 'rxjs/Rx';
+import { ApiService } from '../shared/api.service';
 
 @Component({
   selector: 'my-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  providers: [NETWORKTABLES_SERVICE_PROVIDER]
+  providers: [NETWORKTABLES_SERVICE_PROVIDER, ApiService]
 })
 export class HomeComponent implements OnInit, OnDestroy {
   private statuses: any;
   private statusList: any;
   private statusName: {};
   private _statuses: {};
+  private camera_path: string;
+  private camera_status: number;
 
   constructor(
-    private ntService: NetworkTablesService
+    private ntService: NetworkTablesService,
+    private api: ApiService
   ) {
     this.statuses = [];
     this.statusList = [
@@ -33,8 +37,10 @@ export class HomeComponent implements OnInit, OnDestroy {
       robotdrive_status: "底盘"
     }
     this._statuses = {}
+    this.camera_path = api.getCamera(0);
+    this.camera_status = 0;
   }
-
+  
   private listener: any;
 
   ngOnInit() {
@@ -42,11 +48,10 @@ export class HomeComponent implements OnInit, OnDestroy {
       let t = k.split('/'); t.shift();
       if (t[0] == 'vision') {
         this._statuses[t[1]] = v;
-        this.__update_status();
       }
+      this.__update_status();
     });
   }
-
   private __update_status() {
     this.statuses = [];
     for (let i of this.statusList) {
@@ -76,7 +81,10 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.statuses.push(_st);
       }
     }
-
+    if ("camera_id" in this._statuses) {
+      this.camera_status = this._statuses["camera_id"];
+      this.camera_path = this.api.getCamera(this._statuses["camera_id"]);
+    }
   }
 
   ngOnDestroy() {
