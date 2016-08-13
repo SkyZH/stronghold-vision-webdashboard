@@ -4,7 +4,7 @@
 [![devDependency Status](https://david-dm.org/ZodiacEFZ/stronghold-vision-webdashboard/dev-status.svg)](https://david-dm.org/ZodiacEFZ/stronghold-vision-webdashboard#info=devDependencies)
 [![Build Status](https://travis-ci.org/ZodiacEFZ/stronghold-vision-webdashboard.svg?branch=master)](https://travis-ci.org/ZodiacEFZ/stronghold-vision-webdashboard)
 
-Vision dashboard for Team 9036.
+Vision dashboard for Team Zodiac.
 
 We are so thankful to the open source project [pynetworktables2js](https://github.com/robotpy/pynetworktables2js), which enables our WebDashboard to communicate with NetworkTables using Javascript. We've edited its source code to adapt it to RxJS and Angular2. [Revised networktables.js](https://github.com/ZodiacEFZ/stronghold-vision-webdashboard/blob/master/vendor/networktables.js)
 
